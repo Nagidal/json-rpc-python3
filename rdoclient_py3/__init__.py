@@ -11,11 +11,17 @@ e.g., batch clients:
     >>> r.generate_integers(5, 0, 10)
     [6, 2, 8, 9, 2]
 
-...or for more time sensitive serialized applications, e.g., real-time draws, use:
+...or for more time sensitive serialized applications,
+e.g., real-time draws, use:
 
-    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=2.0, http_timeout=10.0)
+    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=2.0,
+    >>>                     http_timeout=10.0)
     >>> r.generate_signed_integers(5, 0, 10)
-    {'random': {u'min': 0, u'max': 10, u'completionTime': u'2014-05-19 14:26:14Z', u'serialNumber': 1482, u'n': 5, u'base': 10, u'hashedApiKey': u'HASHED_KEY_HERE', u'data': [10, 9, 0, 1, 5], u'method': u'generateSignedIntegers', u'replacement': True}, 'data': [10, 9, 0, 1, 5], 'signature': u'SIGNATURE_HERE'}
+    {'random': {u'min': 0, u'max': 10, u'completionTime':
+    u'2014-05-19 14:26:14Z', u'serialNumber': 1482, u'n': 5, u'base': 10,
+    u'hashedApiKey': u'HASHED_KEY_HERE', u'data': [10, 9, 0, 1, 5], u'method':
+    u'generateSignedIntegers', u'replacement': True}, 'data': [10, 9, 0, 1, 5],
+    'signature': u'SIGNATURE_HERE'}
     
 If obtaining a result instantly or failing is important, a cache should 
 be used. A cache will populate itself as quickly and efficiently as 
@@ -24,7 +30,8 @@ randomness is not available - e.g., the cache is empty - the cache will
 return an Empty exception allowing the lack of randomness to be handled
 without delay:
 
-    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=60.0*60.0, http_timeout=30.0)
+    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=60.0*60.0,
+    >>>                     http_timeout=30.0)
     >>> c = r.create_integer_cache(5, 0, 10)
     >>> try:
     ...     c.get()
@@ -39,7 +46,8 @@ without serialization, however this may be more prone to timeout
 failures as the client must obey the server backoff times if requests
 are sent too frequently:
 
-    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=0.0, http_timeout=10.0, serialized=False)
+    >>> r = RandomOrgClient(YOUR_API_KEY_HERE, blocking_timeout=0.0,
+    >>>                     http_timeout=10.0, serialized=False)
     >>> r.generate_integers(5, 0, 10)
     [3, 5, 2, 4, 8]
 
@@ -54,9 +62,14 @@ __author__ = 'RANDOM.ORG'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2014 RANDOM.ORG'
 
-from .rdoclient import RandomOrgClient, RandomOrgCache, RandomOrgSendTimeoutError, RandomOrgKeyNotRunningError, RandomOrgInsufficientRequestsError, RandomOrgInsufficientBitsError
+from .rdoclient import (
+    RandomOrgClient, RandomOrgCache, RandomOrgSendTimeoutError,
+    RandomOrgKeyNotRunningError, RandomOrgInsufficientRequestsError,
+    RandomOrgInsufficientBitsError)
 
-__all__ = [ 'RandomOrgClient', 'RandomOrgCache', 'RandomOrgSendTimeoutError', 'RandomOrgKeyNotRunningError', 'RandomOrgInsufficientRequestsError', 'RandomOrgInsufficientBitsError' ]
+__all__ = ['RandomOrgClient', 'RandomOrgCache', 'RandomOrgSendTimeoutError',
+           'RandomOrgKeyNotRunningError', 'RandomOrgInsufficientRequestsError',
+           'RandomOrgInsufficientBitsError']
 
 import logging
 

@@ -445,8 +445,9 @@ class RandomOrgClient(object):
             
         else:
             logging.info(
-                "Using RandomOrgClient instance already created for key "
-                "\"{api_key}\""
+                "Using RDO instance already created for key: {0}*".format(
+                    api_key[:8]
+                )
             )
 
     # Basic methods for generating randomness, see:
