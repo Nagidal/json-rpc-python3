@@ -106,6 +106,7 @@ features see ``rdoclient.py`` documentation and
 Change log
 ----------
 
+* 2018-02-11 Release 2.0.3: Improved README and fixed tests
 * 2017-12-06 Release 2.0.2: Obfuscated API in logging output
 * 2017-07-15 Release 2.0.1: Converted README.md to RST for PyPi
 * 2017-07-15 Release 2.0.0: Initial release. Added to PyPi
