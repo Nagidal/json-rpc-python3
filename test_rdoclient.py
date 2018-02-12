@@ -13,10 +13,13 @@ from queue import Empty
 import unittest
 import pytest
 
-from rdoclient import *
+from rdoclient_py3.rdoclient import (
+    RandomOrgClient, RandomOrgSendTimeoutError,
+    RandomOrgInsufficientRequestsError
+)
 
 _API_KEY_1 = 'YOUR_API_KEY_HERE'
-_API_KEY_2 = 'YOUR_API_KEY_HERE'
+_API_KEY_2 = 'LEAVE THIS ONE AS IT IS'
 
 _FAKE_METHOD = 'fooBar'
 
