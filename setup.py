@@ -8,7 +8,7 @@ def read(fname):
 
 setup(
     name="rdoclient-py3",
-    version="2.0.2",
+    version="2.0.3",
     author="RANDOM.ORG (original library), "
            "nicorellius (Python 3 implementation)",
     author_email="nicorellius@protonmail.com",
@@ -17,6 +17,10 @@ setup(
     keywords="RANDOM.ORG random client implementation",
     url="https://github.com/nicorellius/json-rpc-python3",
     packages=['rdoclient_py3'],
+    install_requires=[
+        'requests',
+        'pytest',
+    ],
     python_requires='>=3',
     long_description=read('README.rst'),
     classifiers=[
