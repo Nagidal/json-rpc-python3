@@ -14,14 +14,17 @@ requests matches the sequence of responses.
 Installation
 ------------
 
-To install, simply: ``pip install rdoclient-py3``
+To install, simply: ``pip install rdoclient-py3`` after you set up
+a virtual environment (eg, with ``virtualenvwrapper``):
+
+``mkvirtualenv --python=/usr/local/bin/python3.6 rdoclient-py3``
 
 The base RDO implementation only requires the
 `requests <http://docs.python-requests.org/en/latest/>`__ library:
 ``pip install requests``. However, this package (``rdoclient-py3``)
 requires additional dependencies:
 
-``pip install -r requirements``
+``pip install pytest``
 
 Tests
 -----
@@ -30,7 +33,10 @@ Secure an API key and run the tests. Note that to run the accompanying tests
 the API\_KEY fields must be given authentic values. Get an API key from
 `here <https://api.random.org/api-keys/beta>`__.
 
-Run tests like so:
+Set ``_API_KEY_1`` equal to your API key, and leave `_API_KEY_2`` equal to
+something else.
+
+Then run tests like so:
 
 ``py.test test_rdoclient.py``
 
