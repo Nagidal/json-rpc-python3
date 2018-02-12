@@ -33,7 +33,7 @@ Secure an API key and run the tests. Note that to run the accompanying tests
 the API\_KEY fields must be given authentic values. Get an API key from
 `here <https://api.random.org/api-keys/beta>`__.
 
-Set ``_API_KEY_1`` equal to your API key, and leave `_API_KEY_2`` equal to
+Set ``_API_KEY_1`` equal to your API key, and leave ``_API_KEY_2`` equal to
 something else.
 
 Then run tests like so:
@@ -105,6 +105,8 @@ features see ``rdoclient.py`` documentation and
 
 Change log
 ----------
+
+See `this link <https://packaging.python.org/tutorials/distributing-packages/#pure-python-wheels>`__ for packaging documentation.
 
 * 2018-02-11 Release 2.0.3: Improved README and fixed tests
 * 2017-12-06 Release 2.0.2: Obfuscated API in logging output
