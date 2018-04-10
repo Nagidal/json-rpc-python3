@@ -228,7 +228,7 @@ class RandomOrgCache(object):
                     # Don't handle failures from _request_function()
                     # Just try again later.
                     logging.info(
-                        "RandomOrgCache populate xception: {0}".format(str(e))
+                        "RandomOrgCache populate exception: {0}".format(str(e))
                     )
             
             # No space, sleep and wait for consumed notification.
