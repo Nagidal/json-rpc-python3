@@ -206,7 +206,11 @@ class RandomOrgCache(object):
                     except Exception as e:
                         # Don't handle failures from _request_function()
                         # Just try again later.
-                        logging.info(f"RandomOrgCache populate Exception: {e}")
+                        logging.info(
+                            "RandomOrgCache populate exception: {0}".format(
+                                str(e)
+                            )
+                        )
                     
                 # No space, sleep and wait for consumed notification.
                 else:
@@ -223,7 +227,9 @@ class RandomOrgCache(object):
                 except Exception as e:
                     # Don't handle failures from _request_function()
                     # Just try again later.
-                    logging.info("RandomOrgCache populate Exception: " + str(e))
+                    logging.info(
+                        "RandomOrgCache populate xception: {0}".format(str(e))
+                    )
             
             # No space, sleep and wait for consumed notification.
             else:
