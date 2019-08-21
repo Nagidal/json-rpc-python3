@@ -8,11 +8,11 @@ def read(fname):
 
 setup(
     name="rdoclient-py3",
-    version="2.0.5",
+    version="2.0.6",
     author="RANDOM.ORG (original library), "
            "nicorellius (Python 3 implementation)",
     author_email="nicorellius@protonmail.com",
-    description="RANDOM.ORG JSON-RPC API (release 2) Python 3 implementation.",
+    description="RANDOM.ORG JSON-RPC API (Release 2) Python 3 implementation.",
     license="MIT",
     keywords="RANDOM.ORG random client implementation",
     url="https://github.com/nicorellius/json-rpc-python3",
