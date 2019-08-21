@@ -3,7 +3,7 @@ JSON-RPC-Python3
 
 RANDOM.ORG JSON-RPC API (Release 2) implementation.
 
-This is a Python 3 implementation of the RANDOM.ORG JSON-RPC API (R1).
+This is a Python 3 implementation of the RANDOM.ORG JSON-RPC API (Release 2).
 It provides either serialized or unserialized access to both the signed
 and unsigned methods of the API through the ``RandomOrgClient`` class.
 It also provides a convenience class through the ``RandomOrgClient``
@@ -31,7 +31,7 @@ Tests
 
 Secure an API key and run the tests. Note that to run the accompanying tests
 the API\_KEY fields must be given authentic values. Get an API key from
-`here <https://api.random.org/api-keys/beta>`__.
+`here <https://api.random.org/api-keys>`__.
 
 Set ``_API_KEY_1`` equal to your API key, and leave ``_API_KEY_2`` equal to
 something else.
@@ -101,13 +101,14 @@ Documentation
 
 For a full list of available randomness generation functions and other
 features see ``rdoclient.py`` documentation and
-`this link <https://api.random.org/json-rpc/1/>`__.
+`this link <https://api.random.org/json-rpc/2>`__.
 
 Change log
 ----------
 
 See `this link <https://packaging.python.org/tutorials/distributing-packages/#pure-python-wheels>`__ for packaging documentation.
 
+* 2019-08-21 Release 2.0.6: Updated API Endpoint to use v2
 * 2018-04-10 Release 2.0.5: Fixed Python 3.5 compatibility for exception errors
 * 2018-02-11 Release 2.0.3: Improved README and fixed tests
 * 2017-12-06 Release 2.0.2: Obfuscated API in logging output

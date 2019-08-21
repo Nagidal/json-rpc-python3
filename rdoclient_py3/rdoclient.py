@@ -1605,7 +1605,7 @@ class RandomOrgClient(object):
             time.sleep(wait)
         
         # Send the request & parse the response.
-        response = requests.post('https://api.random.org/json-rpc/1/invoke',
+        response = requests.post('https://api.random.org/json-rpc/2/invoke',
                                  data=json.dumps(request), 
                                  headers={'content-type': 'application/json'},
                                  timeout=self._http_timeout)
