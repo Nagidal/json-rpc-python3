@@ -15,8 +15,8 @@ import pytest
 
 from rdoclient import *
 
-_API_KEY_1 = 'YOUR_API_KEY_HERE'
-_API_KEY_2 = 'YOUR_API_KEY_HERE'
+_API_KEY_1 = "5acb9b0c-9179-4f5c-94ed-ffc7cdffe755"
+_API_KEY_2 = "63436b3d-408f-4593-a857-5bb1a4ce026b"
 
 _FAKE_METHOD = 'fooBar'
 
