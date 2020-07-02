@@ -48,7 +48,7 @@ rdoclient.py documentation and https://api.random.org/json-rpc/1/
 """
 
 __title__ = 'rdoclient'
-__version__ = '1.0.3'
+__version__ = '3.0.6'
 __release__ = "3"
 __build__ = 0x010000
 __author__ = 'RANDOM.ORG, Nick Vincent-Maloney'

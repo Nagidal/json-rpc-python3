@@ -14,7 +14,7 @@ Requires the [requests] (http://docs.python-requests.org/en/latest/): `pip insta
 
 The default setup is best for non-time-critical serialized requests, e.g., batch clients:
 
-    >>> from rdoclient_py38 import RandomOrgClient
+    >>> from rdoclient import RandomOrgClient
     >>> r = RandomOrgClient(YOUR_API_KEY_HERE)
     >>> r.generate_integers(5, 0, 10)
     [6, 2, 8, 9, 2]
