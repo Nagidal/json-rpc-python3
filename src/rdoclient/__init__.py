@@ -48,17 +48,25 @@ rdoclient.py documentation and https://api.random.org/json-rpc/1/
 """
 
 __title__ = 'rdoclient'
-__version__ = '1.0.0'
+__version__ = '1.0.3'
+__release__ = "3"
 __build__ = 0x010000
-__author__ = 'RANDOM.ORG'
+__author__ = 'RANDOM.ORG, Nick Vincent-Maloney'
+__author_email__ = 'contact@random.org'
+__maintainer__ = "Sven Siegmund"
+__maintainer_email_ = "nagidal146@gmail.com"
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2014 RANDOM.ORG'
 
+
 from .rdoclient import RandomOrgClient, RandomOrgCache, RandomOrgSendTimeoutError, RandomOrgKeyNotRunningError, RandomOrgInsufficientRequestsError, RandomOrgInsufficientBitsError
+
 
 __all__ = [ 'RandomOrgClient', 'RandomOrgCache', 'RandomOrgSendTimeoutError', 'RandomOrgKeyNotRunningError', 'RandomOrgInsufficientRequestsError', 'RandomOrgInsufficientBitsError' ]
 
+
 import logging
+
 
 try:
     from logging import NullHandler
@@ -66,5 +74,6 @@ except ImportError:
     class NullHandler(logging.Handler):
         def emit(self, record):
             pass
+
 
 logging.getLogger(__name__).addHandler(NullHandler())
