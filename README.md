@@ -6,7 +6,7 @@ This is a Python 3 implementation of the RANDOM.ORG JSON-RPC API (R1). It provid
 
 ## Installation
 
-To install, simply: `pip install rdoclient`
+To install, simply: `pip install rdoclient-py38`
 
 Requires the [requests] (http://docs.python-requests.org/en/latest/): `pip install requests`
 
@@ -14,7 +14,7 @@ Requires the [requests] (http://docs.python-requests.org/en/latest/): `pip insta
 
 The default setup is best for non-time-critical serialized requests, e.g., batch clients:
 
-    >>> from rdoclient import RandomOrgClient
+    >>> from rdoclient_py38 import RandomOrgClient
     >>> r = RandomOrgClient(YOUR_API_KEY_HERE)
     >>> r.generate_integers(5, 0, 10)
     [6, 2, 8, 9, 2]
