@@ -27,6 +27,12 @@ from datetime import datetime
 from queue import Queue, Empty
 
 
+import logging
+
+
+logger = logging.getLogger(__name__)
+
+
 # Basic RANDOM.ORG API functions https://api.random.org/json-rpc/1/
 _INTEGER_METHOD = 'generateIntegers'
 _DECIMAL_FRACTION_METHOD = 'generateDecimalFractions'
@@ -127,6 +133,8 @@ class RandomOrgCache:
                  cache_size, 
                  bulk_request_number=0, 
                  request_number=0,
+                 queue_block=False,
+                 # queue_block=True,
                 ):
         """
         Constructor.
@@ -153,6 +161,7 @@ class RandomOrgCache:
         self._queue = Queue(cache_size)
         self._bulk_request_number = bulk_request_number
         self._request_number = request_number
+        self._queue_block = queue_block
         # Condition lock to allow notification when an item is consumed
         # or pause state is updated.
         self._lock = threading.Condition()
@@ -183,6 +192,7 @@ class RandomOrgCache:
                 if self._queue.qsize() < (self._queue.maxsize - self._bulk_request_number):
                     # Issue and process request and response.
                     try:
+                        logger.debug("sending request")
                         response = self._request_function(self._request)
                         result = self._process_function(response)
                         # Split bulk response into result sets.
@@ -240,7 +250,8 @@ class RandomOrgCache:
         RandomOrgCache represents or if Queue is empty raise a 
         Queue.Empty exception.
         """
-        result = self._queue.get(False)
+        # result = self._queue.get(False)
+        result = self._queue.get(block=self._queue_block)
         self._lock.acquire()
         self._lock.notify()
         self._lock.release()
